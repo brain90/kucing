@@ -10,12 +10,6 @@
 nnoremap <F5> :! cat in \| python %<cr>
  ```
 
-1 will generate this for you
-* a solution template
-* input
-
-All served within a sec. 
-
 # Usage 
  - cd /your/kattis/directories
  - 1 {problem-id}
