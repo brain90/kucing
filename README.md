@@ -1,10 +1,4 @@
-# Kattis Speed (vim + python)
-
-1 will generate this for you
-* a solution template
-* input
-
-All served within a sec. 
+# Speedup kattis workflow with vim and python
 
 # Installation
 - copy 0 and 1 file into your kattis work dir
@@ -15,6 +9,13 @@ All served within a sec.
  ```
 nnoremap <F5> :! cat in \| python %<cr>
  ```
+
+1 will generate this for you
+* a solution template
+* input
+
+All served within a sec. 
+
 # Usage 
  - cd /your/kattis/directories
  - 1 {problem-id}
