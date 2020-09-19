@@ -1,0 +1,40 @@
+#!/bin/bash
+#set -x
+
+# kattis workflow
+# author: brain90
+
+temp_dir="ztmp"
+
+if [ $# -eq 0 ]; then
+    echo "usage: 1 problem-id"
+    exit 1
+fi
+
+echo 'working...'
+
+
+## gen solver
+if test -f "$1.py"; then
+    echo "$FILE exists. not touched."
+else
+    cp 0 "$1.py"
+fi
+
+## gen input
+rm -rf $temp_dir
+mkdir -p $temp_dir
+wget https://open.kattis.com/problems/$1/file/statement/samples.zip -O $temp_dir/samples.zip
+unzip -o $temp_dir/samples.zip -d $temp_dir
+
+rm -f in 
+
+for f in $temp_dir/*.in;
+do
+  cat $f >> in
+done
+
+rm $temp_dir/* -f
+
+# ready to play
+vim -c "e in | tabe $1.py"
